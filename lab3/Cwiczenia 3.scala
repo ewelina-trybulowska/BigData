@@ -169,7 +169,7 @@ val mean_votes = df.withColumn("mean_votes[1-10]", votes_cols.columns.map(c => c
 // COMMAND ----------
 
 //Dla każdej wartości mean i median policz jaka jest różnica między weighted_average_vote
-val df2=df.withColumn("|mean - weighted_average_vote|",abs($"mean_vote"-$"weighted_average_vote")).withColumn("|median - weighted_average_vote|",abs($"mean_vote"-$"weighted_average_vote"))
+val df2=df.withColumn("|mean - weighted_average_vote|",abs($"mean_vote"-$"weighted_average_vote")).withColumn("|median - weighted_average_vote|",abs($"median_vote"-$"weighted_average_vote"))
 display(df2)
 
 // COMMAND ----------
